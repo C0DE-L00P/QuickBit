@@ -7,37 +7,42 @@
     <title>Quick Bit</title>
     <link rel="icon" type="image/x-icon" href="assets/logot.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src="peerjs.js"></script>
-    <script defer src='index.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    
 </head>
 
 <body>
-    <div id="snackbar">Your ID was copied to clipboard</div>
-
-    <div id="videos">
-        <video class="video-player" id="local-video" autoplay muted playsinline poster="/assets/bg.webp"></video>
-        <video class="video-player" id="remote-video" autoplay playsinline></video>
-    </div>
-
-    <div id="controls">
-
-        <div class="control-container" id="camera-btn">
-            <img src="assets/camera.png" />
-        </div>
-
-        <div class="control-container" id="mic-btn">
-            <img src="assets/mic.png" />
-        </div>
-
-        <a href="lobby.html">
-            <div class="control-container" id="leave-btn">
-                <img src="assets/phone.png" />
+    <main id="lobby-container">
+        <div id="form-container">
+            <div id="form__container__header">
+                <img src="assets/logot.png" width="40px">
+                <h2>Quick Bit</h2>
             </div>
-        </a>
 
-    </div>
+            <div id="form__content__wrapper">
+                <p>Create a new chat room and
+                    share your code</p>
+                <input type="submit" value="Create Room" style="margin-top: 8px;" onclick="generateID()" />
 
+                <p style=" margin: 16px;">Or</p>
+                <p>Join an existing room
+                    with room id</p>
+
+                <form id="join-form" target="_self" action="room.html">
+                    <input type="text" name="invite_link" required style="margin-top: 8px;" id="room_id" />
+                    <input type="submit" value="Join Room" style="margin-top: 16px;" />
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
+
+<script>
+    function generateID() {
+        let id = Date.now().toString(36) + '-' + Math.round(Math.random() * 10000000)
+        navigator.clipboard.writeText(id);
+        window.open('room.html?userId=' + id, '_self')
+    }
+</script>
 
 </html>
