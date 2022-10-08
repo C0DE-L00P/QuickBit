@@ -1,0 +1,72 @@
+body {
+  background: url("assets/bg.webp");
+  font-family: "Inter", -apple-system, "Nunito", BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+#form-container {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  background-color: #262625;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(142, 212, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
+  border: 1px solid rgba(142, 212, 255, 0.02);
+}
+
+#form__container__header {
+  font-weight: 700;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  padding: 30px;
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+  font-size: 300;
+  line-height: 0;
+  display: flex;
+  justify-content: space-between;
+}
+#form__container__header {
+}
+
+#form__content__wrapper {
+  padding: 20px;
+}
+
+input {
+  box-sizing: border-box;
+  color: #515151;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  padding: 16px 20px;
+  font-size: 15px;
+  background-color: rgb(247, 247, 247);
+  margin-top: 32px;
+}
+input:focus {
+  outline: 2px solid #016a94;
+}
+input[type="submit"] {
+  background-color: #00acee;
+  cursor: pointer;
+  color: white;
+}
+input[type="submit"]:hover {
+  background-color: #019dda;
+}
+p {
+  text-align: center;
+  width: 100%;
+  color: white;
+  margin: 0;
+}

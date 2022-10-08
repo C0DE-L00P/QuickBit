@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-player {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#user-2 {
+  display: none;
+}
+
+.smallFrame {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 170px;
+  width: 300px;
+  border-radius: 5px;
+  border: 2px solid #1a2332;
+  background: rgba(142, 212, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
+  border: 1px solid rgba(142, 212, 255, 0.02);
+  z-index: 999;
+}
+
+#controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1em;
+  background: rgba(142, 212, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
+  border: 1px solid rgba(142, 212, 255, 0.02);
+}
+
+.control-container {
+  background-color: #1a2332;
+  padding: 20px;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.control-container img {
+  height: 30px;
+  width: 30px;
+}
+
+#leave-btn {
+  background-color: rgb(255, 80, 80, 1);
+}
+
+@media screen and (max-width: 600px) {
+  .smallFrame {
+    height: 80px;
+    width: 120px;
+  }
+
+  .control-container img {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%; 
+  top: 30px;
+  background: rgba(142, 212, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
+  border: 1px solid rgba(142, 212, 255, 0.02);
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
