@@ -18,7 +18,6 @@ if (guide.includes("invite_link")) {
   document.getElementById('snackbar').innerText += 'Your id is '+ userId
   navigator.clipboard.writeText(userId);
   document.getElementById('snackbar').classList.toggle('show')
-  setTimeout(()=> document.getElementById('snackbar').classList.toggle('show'),3000)
 }
 
 //=========================
@@ -57,6 +56,7 @@ function listen() {
     localStream = selfStream;
 
     call.answer(selfStream);
+    setTimeout(()=> document.getElementById('snackbar').classList.toggle('show'),500)
     call.on("stream", (remoteStream) => {
       remoteVideo.srcObject = remoteStream;
       remoteVideo.style.display = "block";
@@ -86,6 +86,7 @@ async function callSomeone(otherUserId) {
 
   const call = await peer.call(otherUserId, stream);
   call.on("stream", (remoteStream) => {
+    setTimeout(()=> document.getElementById('snackbar').classList.toggle('show'),500)
     remoteVideo.srcObject = remoteStream;
     remoteVideo.style.display = "block";
     localVideo.classList.add("smallFrame");
