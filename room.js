@@ -15,7 +15,8 @@ if (guide.includes("invite_link")) {
   callSomeone(userId);
 } else {
   init(userId);
-  console.log('start animation')
+  document.getElementById('snackbar').innerText += 'Your id is '+ userId
+  navigator.clipboard.writeText(userId);
   document.getElementById('snackbar').classList.toggle('show')
   setTimeout(()=> document.getElementById('snackbar').classList.toggle('show'),3000)
 }
